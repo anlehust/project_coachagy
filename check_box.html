@@ -1,0 +1,347 @@
+<html>
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Lexend Deca' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+        <style>
+            a{
+                text-decoration: none;
+                color: white;
+            }
+            a img{
+                height: 30px;
+                width: 30px;
+            }
+            #main-content{
+                left: 20px;
+                right: 20px;
+                width: 620px;
+                height: 400px;
+            }
+            .disabled{
+                display: none;
+            }
+            body{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: 'Lexend Deca';
+                height: 400px;
+            }
+            form{
+                border-width: 1;
+                border-color: black;
+            }
+            .btn{
+                color:aliceblue;
+                background-color: #E05C4A;
+                width: 150px;
+                height: 50px;
+                border-radius: 15px;
+ 
+            }
+            .btn-length{
+                font-size: 24px;
+                width: max-content;
+                padding: 10px;
+                color: white;
+            }
+            #btn-prev{
+                color:#666666;
+                background-color: white;
+                height: 20px;
+                width: fit-content;
+            }
+            #welcome-text{
+                color: #E05C4A;
+                font-size: 24px;
+            }
+            /* #welcome, #result{
+                
+                width: 100%;
+                height: fit-content;
+            } */
+            input {
+                margin: 10px;
+            }
+            #question {
+                font-size: 16px;
+            }
+            .question_name {
+                font-size: 24px;
+                color: #333333;
+            }
+            #question label{
+                color: #666666;
+            }
+            /* .coral {
+                border-radius: 5px;
+                padding: 1px;
+                color: #E05C4A;
+                font-size: 24px;
+            } */
+            #btn-start{
+                width: 150px;
+                border-radius: 10px;
+                height: 50px;
+            }
+            .flexbox-center{
+                display: flex;
+                justify-content:center;
+                align-content: center;
+            }
+            .flexbox-end{
+                display: flex;
+                justify-content:flex-end;
+                align-content: center;
+            }
+            .flexbox{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            button {
+                border: none;
+                cursor: pointer;
+                font-family: 'Lexend Deca';
+            }
+            .size20{
+                font-size: 20px;
+            }
+            .height20{
+                height: 20px;
+            }
+            div button{
+                margin-right: 5px;
+            }
+            button i{
+                margin-right: 10px;
+            }
+            .img-end{
+                width: 200px;
+            }
+            @media only screen and (max-width: 450px){
+            body{
+                margin:0px;
+                height: 205px;
+            }
+            body div{
+                margin-top: 5px;
+            }
+            input {
+                margin: 5px;
+            }
+            .br-laptop{
+                display: none;
+            }
+            a img{
+                height: 30px;
+                width: 30px;
+            }
+            #main-content{
+                left: 15px;
+                right: 15px;
+                width: 100vw;
+                height: 205px;
+            }
+            .btn{
+                color:aliceblue;
+                background-color: #E05C4A;
+                width: 100px;
+                height: 35px;
+                border-radius: 15px;
+ 
+            }
+            .height20{
+                height: 16px;
+                margin-top: 0px;
+            }
+            .btn-length{
+                font-size: 18px;
+                width: max-content;
+                padding: 5px 8px;
+                color: white;
+                position: absolute;
+                bottom: 0px;
+            }
+            #btn-prev{
+                color:#666666;
+                background-color: white;
+                height: 20px;
+                width: fit-content;
+            }
+            #welcome-text{
+                color: #E05C4A;
+                font-size: 20px;
+            }
+            #question {
+                font-size: 12px;
+            }
+            .question_name {
+                font-size: 20px;
+                color: #333333;
+                margin: 5px;
+            }
+            #btn-start{
+                width: 130px;
+                border-radius: 10px;
+                height: 40px;
+            }
+            .size20{
+                font-size: 14px;
+                margin: 0 0 5px 0;
+            }
+            .img-end{
+                display: none;
+            }
+            br{
+                height: 10px;
+            }
+            form{
+                margin: 0px;
+            }
+            #btn-next, #btn-submit{
+                height: 30px;
+                position: absolute;
+                bottom: 0px;
+            }
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "welcome">
+            <div id="welcome-text">Dành 1 phút cùng COACHAGY nhìn lại chính mình nhé ?</div>
+            <br><br> 
+            <div class='flexbox-center'><button class ="btn" id='btn-start' onclick="start()">Tôi đã sẵn sàng!!!</button></div>
+        </div>
+        <div id ="main-content" class = "disabled">
+            <div class='height20'><button id = "btn-prev" class="btn disabled" onclick="prev()">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>Quay lại</button></div>
+            <div id="question">
+            </div>
+            <br class='br-laptop'><br class='br-laptop'>
+ 
+            <div>
+                
+                <button id = "btn-next" class ="btn" onclick="next()">Tiếp tục</button>
+            <button id = "btn-submit" class="btn disabled" onclick="submit()">Hoàn thành</button></div>
+        </div>
+        <div class = "disabled" id = "result">
+        </div>
+    <script>
+        var num_checkbox = 0;
+        var current_question = 1;
+        function next(){
+            current_question += Number(1);
+            activate(current_question);
+            if(current_question == 2){
+                document.getElementById('btn-prev').classList.remove('disabled');
+            }
+            if(current_question == 4){
+                document.getElementById('btn-next').classList.add('disabled');
+                document.getElementById('btn-submit').classList.remove('disabled');
+            }
+        }
+        function prev(){
+            current_question -= Number(1);
+            activate(current_question);
+            if(current_question == 1){
+                document.getElementById('btn-prev').classList.add('disabled');
+            }
+            if(current_question == 3){
+                document.getElementById('btn-next').classList.remove('disabled');
+                document.getElementById('btn-submit').classList.add('disabled');
+            }
+        }
+        var list_question = {
+            '1':{'text':'Tôi loay hoay…','answers':[{"answer_name":"trong vùng an toàn của chính mình","checked":false}, {"answer_name":"không có động lực để thay đổi","checked":false}, {"answer_name":"trì hoãn, không dám hành động, sợ thất bại","checked":false}]},
+            '2':{'text':'Tôi phân vân...','answers':[{"answer_name":"về định hướng sự nghiệp trong tương lai","checked":false},{"answer_name":"nghi ngờ năng lực bản thân, mất tự tin","checked":false}, {"answer_name":"trước một quyết định rất quan trọng","checked":false}]},
+            '3':{'text':'Tôi bắt đầu suy nghĩ nhiều về…', 'answers':[{"answer_name":"chặng tiếp theo của một cuộc đời có ý nghĩa","checked":false},{"answer_name":"làm thuê / tự do / khởi nghiệp / thu nhập thụ động","checked":false}, {"answer_name":"hoạch định bước chuyển tiếp như thế nào","checked":false}]},
+            '4':{'text':'Tôi muốn…','answers': [{"answer_name":"tối đa hóa tiềm lực của cá nhân mình / doanh nghiệp mình","checked":false},{"answer_name":"có sự chuẩn bị bài bản nhất cho mục tiêu phát triển trong 3 năm tới","checked":false}, {"answer_name":"đội ngũ quản lý chủ chốt được gắn kết và được phát triển kỹ năng lãnh đạo","checked":false}]}
+        }
+        var paginate_list = document.getElementsByTagName("a");
+        for (var i = 0; i < paginate_list.length; i++) {
+        paginate_list[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        
+        current[0].className = current[0].className.replace("active", "");
+        this.className += " active";
+        });
+        }
+        function activate(question_id){
+            let index_ans = 0;
+            let content = document.getElementById("question");
+            content.innerHTML = '';
+            
+            question_name = list_question[question_id].text;
+            let question_html = document.createElement('form');
+            question_html.setAttribute("value",question_name);
+            let name_question = document.createElement('p');
+            name_question.classList.add('question_name');
+            name_question.innerHTML = question_name;
+            question_html.append(name_question);
+            list_question[question_id].answers.forEach(answer => {
+                let answer_html = htmlToElements(`<label><input type=checkbox  onchange="onCheck(this)" index=`+index_ans+` value=`+answer['answer_name']+`>`+answer['answer_name']+`</label><br>`);
+                answer_html[0].firstChild.checked = answer['checked'];
+                question_html.append(answer_html[0]);
+                question_html.append(answer_html[0]);
+                index_ans += Number(1);
+            });
+            content.append(question_html);
+            if(question_id==4){
+                document.getElementById("btn-submit").removeAttribute("disabled");
+            }
+        }
+        function htmlToElements(html) {
+            var template = document.createElement('template');
+            template.innerHTML = html;
+            return template.content.childNodes;
+        }
+        
+        function onCheck(checkbox){
+            list_question[current_question].answers[checkbox.getAttribute("index")].checked = checkbox.checked;
+            if(checkbox.checked){ num_checkbox = num_checkbox + Number(1);}
+            else num_checkbox = num_checkbox - Number(1);
+        }
+        function submit(){
+            let package = "";
+            
+            if(num_checkbox >= 0 && num_checkbox <= 3){
+                package = 
+                   `<div class='flexbox'><img class='img-end' src = "https://lh3.googleusercontent.com/d/1NVjo6QF8BaRlRt9neBeVOfhVB82Au-0h"/>`
+                  +`<div><p class='size20'>Có thể bạn đã có mục tiêu rõ ràng, và có khả năng tự thúc đẩy bản thân</p>`
+                  +`<p class='size20'>Bạn cần một người đồng hành, nhắc bạn chịu trách nhiệm với bản thân, động viên bạn trên hành trình đạt được đích đến</p>`
+                  +`<button class='btn btn-length'><a class='coral' href="https://beta1.coachagy.com/d%E1%BB%8Bch-v%E1%BB%A5/khai-v%E1%BA%A5n#h.c33hc2svhqaz">Đi đến hành trình này</a></button></div></div>`;
+ 
+            }
+            else if (num_checkbox >= 4 && num_checkbox <= 6){
+                package = 
+                   `<div class='flexbox'><img class='img-end' src = "https://lh3.googleusercontent.com/d/1krbGLlpFPupgE-tfxPQJmMGQ9ReBN0yy"/>`
+                  +`<div><p class='size20'>Có thể bạn biết mình phải làm gì, nhưng đang trì hoãn, không thực hiện được kết quả mình mong muốn</p>`
+                  +`<p class='size20'>Bạn cần một coach giúp bạn tìm và khám phá những “điểm mù” khiến bạn trì hoãn, động viên bạn trên hành trình đạt được giấc mơ của mình</p>`
+                  +`<button class='btn btn-length'><a class='coral' href="https://beta1.coachagy.com/d%E1%BB%8Bch-v%E1%BB%A5/khai-v%E1%BA%A5n#h.awfqxihx68sg">Đi đến hành trình này</a></button></div></div>`;
+            }
+            else if (num_checkbox >= 7){
+                package = 
+                   `<div class='flexbox'<img class='img-end' src = "https://lh3.googleusercontent.com/d/1SRKL7p-b_AxEtGsCTry8ziZ8OAGminUk"/>`
+                  +`<div><p class='size20'>Có thể bạn mong muốn phát triển bản thân, sống một cuộc đời đáng mơ ước, nhưng không biết phải làm gì</p>`
+                  +`<p class='size20'>Kết quả bạn đang mong muốn mơ hồ, và phức tạp</p>`
+                  +`<p class='size20'>Có thể bạn cần hiểu thêm những điều bạn đang “không biết là mình không biết” và sự hỗ trợ dài hạn từ coach để tạo ra một kết quả đột phá</p>`
+                  +`<button class='btn btn-length'><a class='coral' href="https://beta1.coachagy.com/d%E1%BB%8Bch-v%E1%BB%A5/khai-v%E1%BA%A5n#h.y82kcsruvgqa">Đi đến hành trình này</a></button></div></div>`;
+            }
+            let content = document.getElementById("main-content");
+            content.classList.add("disabled");
+            let result = document.getElementById("result");
+            result.innerHTML += package;
+            result.classList.remove("disabled");
+        }
+        function start(){
+            document.getElementById("welcome").classList.add("disabled");
+            document.getElementById("main-content").classList.remove("disabled");
+            activate(1);
+        }
+    </script>
+    </body>
+</html>
+ 
+
